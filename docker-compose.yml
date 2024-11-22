@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:12.20-alpine3.20
+    environment:
+    - POSTGRES_DB=help-center
+    - POSTGRES_USER=helpcenter
+    - POSTGRES_PASSWORD=password
+    ports:
+    - 5435:5432
