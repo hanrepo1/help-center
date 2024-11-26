@@ -29,11 +29,11 @@ public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
-        String path = request.getRequestURI();
-        if (path.startsWith("/v3/api-docs") || path.startsWith("/swagger-ui") || path.startsWith("/swagger-ui.html") || path.contains("/auth")) {
-            chain.doFilter(request, response);
-            return;
-        }
+//        String path = request.getRequestURI();
+//        if (path.startsWith("/v3/api-docs") || path.startsWith("/swagger-ui") || path.startsWith("/swagger-ui.html") || path.contains("/auth") || path.contains("/chat")) {
+//            chain.doFilter(request, response);
+//            return;
+//        }
 
         String token = jwtUtil.extractToken(request);
         if (token != null && jwtUtil.validateToken(token)) {
