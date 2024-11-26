@@ -17,10 +17,10 @@ public class ResponseHandler {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("success",!status.isError());
         map.put("status", status.value());
-//        map.put("content",responseObj == null ? "" : responseObj);
+        map.put("content",responseObj == null ? message : responseObj);
         map.put("timestamp", new Date());
-        if (responseObj != null) map.put("content", responseObj);
-        if (responseObj == null) map.put("message", message);
+//        if (responseObj != null) map.put("content", responseObj);
+//        if (responseObj == null) map.put("message", message);
         if(errorCode != null)
         {
             map.put("error_code",errorCode);
